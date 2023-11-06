@@ -143,10 +143,9 @@ function Game() {
             const phaserGame = new Phaser.Game({
                 type: Phaser.AUTO,
                 width: D_WIDTH,// ゲーム画面の横幅
-                height: 960,// ゲーム画面の高さ
+                height: D_HEIGHT,// ゲーム画面の高さ
                 scale: {
                     parent: 'main',
-                    mode: Phaser.Scale.FIT,
                     autoCenter: Phaser.Scale.CENTER_BOTH,
                 },
                 scene: [TitleScene, GameScene],
@@ -166,7 +165,7 @@ function Game() {
     return (
         <div className="bg-white">
             <div className="py-8 px-4 mx-auto max-w-screen-xllg:px-6">
-                <div id="game-content" key="game-content">
+                <div id="main">
                     { }
                 </div>
                 <div className="text-center ">
