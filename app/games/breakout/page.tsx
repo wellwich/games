@@ -131,11 +131,7 @@ class GameScene extends Phaser.Scene {
 }
 
 function Game() {
-    const isDevelopment = process.env.NODE_ENV === 'development';
     const [game, setGame] = useState<GameType>();
-    const dialogMessages = useState([]);
-    const menuItems = useState([]);
-    const gameTexts = useState([]);
 
     useEffect(() => {
         async function initPhaser() {
