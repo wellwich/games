@@ -3,11 +3,6 @@ import { Game as GameType } from "phaser";
 import Phaser from "phaser";
 import { useState, useEffect } from "react";
 
-export const metadata = {
-    title: 'ブロック崩し',
-    description: 'シンプルなブロック崩し',
-}
-
 const D_WIDTH = 640;
 const D_HEIGHT = 480;
 

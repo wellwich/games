@@ -2,11 +2,6 @@
 import Phaser, { Game as GameType } from "phaser";
 import { useState, useEffect } from "react";
 
-export const metadata = {
-    title: '四川省（二角取り）',
-    description: '麻雀牌を使った二角取りゲーム',
-}
-
 const DEFAULT_WIDTH = 640;
 const DEFAULT_HEIGHT = 480;
 const TILE_TYPES = 34;
