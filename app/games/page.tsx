@@ -30,7 +30,7 @@ const games = [
     },
 ]
 
-export function GamesPage() {
+export default function GamesPage() {
     return (
         <div>
             <h2 className="text-4xl font-bold">ゲーム</h2>
@@ -64,5 +64,5 @@ export function GamesPage() {
     )
 }
 
-export default GamesPage;
+
 export const runtime = "edge"
