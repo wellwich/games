@@ -1,4 +1,4 @@
-import GamesPage from "./games/page"
+import GamesPage from "../components/GamesPage"
 
 export default function Page() {
   return (
