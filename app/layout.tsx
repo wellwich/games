@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: '無料ブラウザゲームサイト＠うぇる',
     template: `%s | 無料ブラウザゲームサイト＠うぇる`
   },
-  description: '無料でブラウザで遊べるゲームサイトです。',
+  description: '無料でブラウザゲームが遊べるサイトです。',
 }
 
 
