@@ -30,7 +30,7 @@ const games = [
     },
 ]
 
-export const GamesPage = () => {
+export function GamesPage() {
     return (
         <div>
             <h2 className="text-4xl font-bold">ゲーム</h2>
