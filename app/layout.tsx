@@ -16,6 +16,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const infoList = info.map((info) => {
+    return {
+      id: info.id,
+      title: info.title,
+      category: info.category,
+      path: info.path,
+      date: info.date,
+    }
+  })
+  // infoListを3つだけにする
+  infoList.length = 3
   return (
     <html lang="ja">
       <body className=' lg:w-3/4 lg:mx-auto mt-8'>
@@ -37,11 +48,9 @@ export default function RootLayout({
           </nav>
         </header>
 
-        <h2 className="text-xs">お知らせ</h2>
-
         <ul className=" m-0 p-0">
-          {info.map((info) => (
-            <li className=" border-b border-gray-400 p-2 first:border-t">
+          {infoList.map((info) => (
+            <li key={info.id} className=" border-b border-gray-400 p-2 first:border-t">
               <a href={info.path + "#" + info.id} className="flex flex-wrap md:flex-nowrap">
                 <p className="md:min-w-[140px] min-w-[100px] text-gray-400 pr-5">{info.date}</p>
                 <p className="min-w-[140px] pr-5"><span className=" bg-gray-400 text-white text-center inline-block py-1 px-5 text-[12px] leading-none">{info.category}</span></p>

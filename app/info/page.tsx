@@ -16,9 +16,9 @@ export default function Info() {
     return (
         <>
             <h2 className="text-4xl font-bold">お知らせ</h2>
-            <ul className=" mt-4 p-0">
+            <div className=" mt-4 p-0">
                 {info.map((info) => (
-                    <div className=" border border-black">
+                    <div className=" border border-black m-4">
                         <h3 className=" bg-gray-600 text-white" id={info.id.toString()}>{info.date}</h3>
                         <div className="flex text-xs">
                             <p className="">{info.title}</p>
@@ -26,7 +26,7 @@ export default function Info() {
                         <p>{info.description}</p>
                     </div>
                 ))}
-            </ul>
+            </div>
         </>
     )
 }
