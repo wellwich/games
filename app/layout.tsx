@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     template: `%s | 無料ブラウザゲームサイト＠うぇる`
   },
   description: '無料でブラウザゲームが遊べるサイトです。',
+  verification: {
+    google: '9B1ozRnCZU3XL8e5dpDVtJ2YTltQ-Q7qvBJIskqusdg',
+  },
 }
 
 
