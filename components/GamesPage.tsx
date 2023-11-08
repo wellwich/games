@@ -8,6 +8,12 @@ const games = [
                 image: "https://assets.wellwich.com/web/sichuan_thumb.jpg",
                 path: "/games/sichuan",
                 description: "麻雀牌を使った二角取りゲーム",
+            },
+            {
+                name: "ライツアウト",
+                image: "https://assets.wellwich.com/web/lightsout_thumb.jpg",
+                path: "/games/lightsout",
+                description: "シンプルなライツアウト",
             }
         ]
     },
@@ -22,7 +28,7 @@ const games = [
                 description: "シンプルなブロック崩し",
             }
         ]
-    },
+    }
 ]
 
 const GamesPage = () => {
