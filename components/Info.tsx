@@ -30,6 +30,14 @@ const info = [
         color: 'bg-green-400',
         path: '/games/lightsout',
         date: '2023/11/08',
+    },
+    {
+        id: 5,
+        title: 'ライツアウトを更新しました',
+        category: '更新',
+        color: 'bg-yellow-400',
+        path: '/games/lightsout#update',
+        date: '2023/11/14',
     }
 ]
 

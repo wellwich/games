@@ -191,6 +191,11 @@ function Game() {
                         <ul className="list-disc list-inside">
                             <li><strong>クリア条件</strong>：タイルをすべて白にしたらクリア</li>
                         </ul>
+                        <h3 className=" text-2xl font-bold" id="update">更新履歴</h3>
+                        <ul className="list-disc list-inside">
+                            <li>2023/11/08：リリース</li>
+                            <li>2023/11/14：レベルとタイマーを追加</li>
+                        </ul>
                     </section>
                 </div>
             </div>
