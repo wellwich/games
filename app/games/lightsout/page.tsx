@@ -20,7 +20,7 @@ class TitleScene extends Phaser.Scene {
         const start = this.add.text(D_WIDTH / 2, D_HEIGHT / 2 + 100, 'Tap to start', { fontSize: '16px', fontFamily: '"font"' }).setOrigin(0.5, 0.5);
         // 画面のどこかをタップしたらゲーム画面へ
         background.on('pointerup', () => {
-            this.scene.start('gameScene');
+            this.scene.start('gameScene', { limit: 30 });
         });
     }
 }
@@ -30,11 +30,48 @@ class GameScene extends Phaser.Scene {
         super('gameScene');
     }
 
+    private limit!: number;
+
+    init(data: { limit: number }) {
+        this.limit = data.limit;
+    }
+
     preload() {
+        this.load.image('gauge', 'https://assets.wellwich.com/lightsout/gauge.png');
     }
 
     create() {
         const background = this.add.rectangle(0, 0, D_WIDTH, D_HEIGHT, 0x444444, 0.5).setOrigin(0, 0);
+        const timer = this.time.addEvent({
+            delay: 500,
+            callback: () => {
+                gaugeMask.height += Math.ceil(224 / this.limit);
+                if (gaugeMask.height >= 160) {
+                    gauge.setFillStyle(0xff0000);
+                }
+                if (gaugeMask.height >= 224) {
+                    timer.remove();
+                    const BG = this.add.rectangle(0, 0, D_WIDTH, D_HEIGHT, 0x000000, 0.5).setOrigin(0, 0);
+                    BG.setInteractive();
+                    const clearText = this.add.text(D_WIDTH / 2, D_HEIGHT / 2, 'GAME OVER', {
+                        fontSize: '64px',
+                        color: '#ffffff',
+                    });
+                    clearText.setOrigin(0.5, 0.5);
+                    // クリックされたらリロード
+                    BG.on('pointerup', () => {
+                        this.scene.start('titleScene');
+                    });
+                }
+            },
+            repeat: this.limit - 1,
+        });
+        const gaugeX = 64;
+        const gaugeY = 96;
+        const levelText = this.add.text(gaugeX - 16, 32, "Lv." + (31 - this.limit).toString().padStart(2, '0'), { fontSize: '32px', color: '#fff', fontFamily: 'monospace' }).setOrigin(0, 0);
+        const gauge = this.add.rectangle(gaugeX + 16, gaugeY + 16, 32, 224, 0xffff00).setOrigin(0, 0);
+        const gaugeMask = this.add.rectangle(gaugeX + 16, gaugeY + 16, 32, 0, 0x000000).setOrigin(0, 0);
+        const guageframe = this.add.image(gaugeX, gaugeY, 'gauge').setOrigin(0, 0);
         // ライツアウトの盤面を作成
         const board = [
             [0, 0, 0],
@@ -63,7 +100,7 @@ class GameScene extends Phaser.Scene {
             row.forEach((cell, x) => {
                 const cellSprite = this.add.sprite(0, 0, cell === 0 ? 'whiteCell' : 'blackCell');
                 cellSprite.setOrigin(0, 0);
-                cellSprite.setPosition(x * cellSize + 128, y * cellSize + 48);
+                cellSprite.setPosition(x * cellSize + 192, y * cellSize + 48);
                 cellSprite.setInteractive();
                 cellSprite.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
                     // クリックされたセルを反転
@@ -97,14 +134,11 @@ class GameScene extends Phaser.Scene {
                         });
                         clearText.setOrigin(0.5, 0.5);
                         // クリックされたらリロード
-                        const restartText = this.add.text(D_WIDTH / 2, D_HEIGHT / 2 + 64, 'CLICK TO RESTART', {
-                            fontSize: '32px',
-                            color: '#ffffff',
-                        });
-                        restartText.setOrigin(0.5, 0.5);
-                        restartText.setInteractive();
-                        restartText.on('pointerdown', () => {
-                            this.scene.restart();
+                        const delay = this.time.addEvent({
+                            delay: 1000,
+                            callback: () => {
+                                this.scene.restart({ limit: this.limit - 1 });
+                            },
                         });
                     }
                 });
