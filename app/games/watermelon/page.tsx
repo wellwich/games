@@ -321,17 +321,16 @@ function Game() {
                 </div>
                 <div className="text-center ">
                     <section className="text-left lg:px-16">
-                        <h2 className="text-4xl font-bold">ライツアウト</h2>
+                        <h2 className="text-4xl font-bold">ヌイカゲーム</h2>
                         <h3 className=" text-2xl font-bold">概要</h3>
-                        <p>シンプルなライツアウト</p>
+                        <p>スイカゲームのパクリ</p>
                         <h3 className=" text-2xl font-bold">基本ルール</h3>
                         <ul className="list-disc list-inside">
-                            <li><strong>クリア条件</strong>：タイルをすべて白にしたらクリア</li>
+                            <li><strong>敗北条件</strong>：赤の線より上に行ったらゲームオーバー</li>
                         </ul>
                         <h3 className=" text-2xl font-bold" id="update">更新履歴</h3>
                         <ul className="list-disc list-inside">
-                            <li>2023/11/08：リリース</li>
-                            <li>2023/11/14：レベルとタイマーを追加</li>
+                            <li>2023/11/28：リリース</li>
                         </ul>
                     </section>
                 </div>
