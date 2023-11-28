@@ -14,6 +14,12 @@ const games = [
                 image: "https://assets.wellwich.com/web/lightsout_thumb.jpg",
                 path: "/games/lightsout",
                 description: "シンプルなライツアウト",
+            },
+            {
+                name: "ヌイカゲーム",
+                image: "https://assets.wellwich.com/web/watermelon_thumb.jpg",
+                path: "/games/watermelon",
+                description: "スイカゲームのパクリ",
             }
         ]
     },
@@ -26,18 +32,6 @@ const games = [
                 image: "https://assets.wellwich.com/web/breakout_thumb.jpg",
                 path: "/games/breakout",
                 description: "シンプルなブロック崩し",
-            }
-        ]
-    },
-    {
-        name: "ヌイカゲーム"
-        , description: "スイカゲームのパクリ",
-        children: [
-            {
-                name: "ヌイカゲーム",
-                image: "https://assets.wellwich.com/web/watermelon_thumb.jpg",
-                path: "/games/watermelon",
-                description: "某ゲームのパクリ",
             }
         ]
     }
