@@ -38,6 +38,14 @@ const info = [
         color: 'bg-yellow-400',
         path: '/games/lightsout#update',
         date: '2023/11/14',
+    },
+    {
+        id: 6,
+        title: 'ヌイカゲームを追加しました',
+        category: 'リリース',
+        color: 'bg-green-400',
+        path: '/games/watermelon',
+        date: '2023/11/28',
     }
 ]
 

@@ -14,6 +14,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
         url: "https://games.wellwich.com/games/lightsout",
         lastModified: new Date()
+    },
+    {
+        url: "https://games.wellwich.com/games/watermelon",
+        lastModified: new Date()
     }];
 }
 

@@ -28,6 +28,18 @@ const games = [
                 description: "シンプルなブロック崩し",
             }
         ]
+    },
+    {
+        name: "ヌイカゲーム"
+        , description: "スイカゲームのパクリ",
+        children: [
+            {
+                name: "ヌイカゲーム",
+                image: "https://assets.wellwich.com/web/watermelon_thumb.jpg",
+                path: "/games/watermelon",
+                description: "某ゲームのパクリ",
+            }
+        ]
     }
 ]
 
