@@ -14,6 +14,15 @@ class TitleScene extends Phaser.Scene {
         const background = this.add.rectangle(0, 0, D_WIDTH, D_HEIGHT, 0x444444, 0.5);
         background.setOrigin(0, 0);
         background.setInteractive();
+        const fullScreen = this.add.text(D_WIDTH - 16, 16, 'Full Screen', { fontSize: '16px', fontFamily: '"font"' }).setOrigin(1, 0);
+        fullScreen.setInteractive();
+        fullScreen.on('pointerup', () => {
+            if (this.scale.isFullscreen) {
+                this.scale.stopFullscreen();
+            } else {
+                this.scale.startFullscreen();
+            }
+        });
         const title = this.add.text(D_WIDTH / 2, D_HEIGHT / 2 - 50, 'ブロック崩し', { fontSize: '64px', color: '#fff', fontFamily: 'monospace' }).setOrigin(0.5, 0.5);
         const start = this.add.text(D_WIDTH / 2, D_HEIGHT / 2 + 100, 'Tap to start', { fontSize: '16px', fontFamily: '"font"' }).setOrigin(0.5, 0.5);
         // 画面のどこかをタップしたらゲーム画面へ
@@ -142,6 +151,8 @@ function Game() {
                 height: D_HEIGHT,// ゲーム画面の高さ
                 scale: {
                     parent: 'main',
+                    mode: Phaser.Scale.FIT,
+                    fullscreenTarget: 'main',
                     autoCenter: Phaser.Scale.CENTER_BOTH,
                 },
                 scene: [TitleScene, GameScene],

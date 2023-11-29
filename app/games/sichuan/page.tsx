@@ -93,6 +93,15 @@ class TitleScene extends Phaser.Scene {
         let background = this.add.rectangle(0, 0, DEFAULT_WIDTH, DEFAULT_HEIGHT, 0x444444, 0.5);
         background.setOrigin(0, 0);
         background.setInteractive();
+        const fullScreen = this.add.text(DEFAULT_WIDTH - 16, 16, 'Full Screen', { fontSize: '16px', fontFamily: '"font"' }).setOrigin(1, 0);
+        fullScreen.setInteractive();
+        fullScreen.on('pointerup', () => {
+            if (this.scale.isFullscreen) {
+                this.scale.stopFullscreen();
+            } else {
+                this.scale.startFullscreen();
+            }
+        });
         let ranking = this.add.text(DEFAULT_WIDTH / 2, DEFAULT_HEIGHT - 16, 'ranking', { fontSize: '16px', fontFamily: '"font"' }).setOrigin(0.5, 1);
         ranking.setInteractive();
         ranking.on('pointerdown', () => {
@@ -295,6 +304,8 @@ function Game() {
                 height: DEFAULT_HEIGHT,// ゲーム画面の高さ
                 scale: {
                     parent: 'main',
+                    mode: Phaser.Scale.FIT,
+                    fullscreenTarget: 'main',
                     autoCenter: Phaser.Scale.CENTER_BOTH,
                 },
                 scene: [TitleScene, GameScene, RankingScene],
