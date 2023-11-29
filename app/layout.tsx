@@ -41,7 +41,7 @@ export default function RootLayout({
         </header>
 
         <Info />
-        <div className=' px-16'>
+        <div className='lg:px-16'>
           {children}
         </div>
       </body>
