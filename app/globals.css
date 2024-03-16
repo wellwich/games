@@ -12,6 +12,11 @@ p {
   margin: 0 auto;
 }
 
+@font-face {
+  font-family: The Strong Gamer;
+  src: url('https://assets.wellwich.com/default/fonts/x8y12pxTheStrongGamer.ttf');
+}
+
 @media screen and (max-width: 640px) {
   #main {
     height: 100%;

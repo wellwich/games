@@ -34,6 +34,18 @@ const games = [
                 description: "シンプルなブロック崩し",
             }
         ]
+    },
+    {
+        name: "トランプ",
+        description: "トランプゲーム",
+        children: [
+            {
+                name: "ソロポーカー",
+                image: "https://assets.wellwich.com/web/solo-poker_thumb.webp",
+                path: "/games/solo-poker",
+                description: "練習用の一人型ポーカー",
+            }
+        ]
     }
 ]
 

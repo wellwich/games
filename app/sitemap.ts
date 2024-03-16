@@ -18,7 +18,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
         url: "https://games.wellwich.com/games/watermelon",
         lastModified: new Date()
-    }];
+    },
+    {
+        url: "https://games.wellwich.com/games/solo-poker",
+        lastModified: new Date()
+    },
+    ];
 }
 
 export const runtime = "edge";

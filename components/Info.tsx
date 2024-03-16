@@ -46,7 +46,15 @@ const info = [
         color: 'bg-green-400',
         path: '/games/watermelon',
         date: '2023/11/28',
-    }
+    },
+    {
+        id: 7,
+        title: 'ソロポーカーを追加しました',
+        category: 'リリース',
+        color: 'bg-green-400',
+        path: '/games/solo-poker',
+        date: '2024/03/17',
+    },
 ]
 
 const Info = () => {
