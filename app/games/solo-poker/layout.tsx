@@ -1,6 +1,6 @@
 export const metadata = {
     title: 'ソロポーカー',
-    description: 'そろそろポーカーを覚えようかな？',
+    description: '練習用の一人型ポーカー',
 }
 
 function RootLayout({
