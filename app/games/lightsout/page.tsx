@@ -31,6 +31,18 @@ class TitleScene extends Phaser.Scene {
         background.on('pointerup', () => {
             this.scene.start('gameScene', { limit: 30 });
         });
+        if (window.matchMedia && window.matchMedia('(max-device-width: 640px)').matches) {
+            const background = this.add.rectangle(0, 0, D_WIDTH, D_HEIGHT, 0x444444);
+            background.setInteractive();
+            background.setOrigin(0, 0);
+            this.add.text(D_WIDTH / 2, D_HEIGHT / 2, '横画面にしてください', { fontSize: '64px', color: '#fff', fontFamily: 'monospace' }).setFontSize(32).setOrigin(0.5);
+            const fixScreen = this.add.text(D_WIDTH / 2, D_HEIGHT / 2 + 150, '横画面にしたらここをタップ', { fontSize: '64px', color: '#fff', fontFamily: 'monospace' }).setFontSize(16).setOrigin(0.5);
+            fixScreen.setInteractive();
+            fixScreen.on('pointerup', () => {
+                this.scale.startFullscreen();
+                this.scene.start('titleScene');
+            });
+        }
     }
 }
 

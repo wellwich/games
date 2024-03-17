@@ -22,6 +22,46 @@ const gameConfig = {
     } as Phaser.Types.GameObjects.Text.TextStyle,
 };
 
+
+
+class TitleScene extends Phaser.Scene {
+    constructor() {
+        super('titleScene');
+    }
+    create() {
+        const background = this.add.rectangle(0, 0, gameConfig.DEFAULT_WIDTH, gameConfig.DEFAULT_HEIGHT, 0x444444, 0.5);
+        background.setOrigin(0, 0);
+        background.setInteractive();
+        const fullScreen = this.add.text(gameConfig.DEFAULT_WIDTH - 16, 16, 'Full Screen', { fontSize: '32px', fontFamily: 'The Strong Gamer' }).setOrigin(1, 0);
+        fullScreen.setInteractive();
+        fullScreen.on('pointerup', () => {
+            if (this.scale.isFullscreen) {
+                this.scale.stopFullscreen();
+            } else {
+                this.scale.startFullscreen();
+            }
+        });
+        const title = this.add.text(gameConfig.DEFAULT_WIDTH / 2, gameConfig.DEFAULT_HEIGHT / 2 - 50, 'ソロポーカー', { fontSize: '96px', fontFamily: 'monospace' }).setOrigin(0.5, 0.5);
+        const start = this.add.text(gameConfig.DEFAULT_WIDTH / 2, gameConfig.DEFAULT_HEIGHT / 2 + 100, 'Tap to start', { fontSize: '64px', fontFamily: 'The Strong Gamer' }).setOrigin(0.5, 0.5).setFontSize(32);
+        // 画面のどこかをタップしたらゲーム画面へ
+        background.on('pointerup', () => {
+            this.scene.start('gameScene');
+        });
+        if (window.matchMedia && window.matchMedia('(max-device-width: 640px)').matches) {
+            const background = this.add.rectangle(0, 0, gameConfig.DEFAULT_WIDTH, gameConfig.DEFAULT_HEIGHT, 0x444444);
+            background.setInteractive();
+            background.setOrigin(0, 0);
+            this.add.text(gameConfig.DEFAULT_WIDTH / 2, gameConfig.DEFAULT_HEIGHT / 2, '横画面にしてください', gameConfig.DEFAULT_FONT).setFontSize(32).setOrigin(0.5);
+            const fixScreen = this.add.text(gameConfig.DEFAULT_WIDTH / 2, gameConfig.DEFAULT_HEIGHT / 2 + 150, '横画面にしたらここをタップ', gameConfig.DEFAULT_FONT).setFontSize(32).setOrigin(0.5);
+            fixScreen.setInteractive();
+            fixScreen.on('pointerup', () => {
+                this.scale.startFullscreen();
+                this.scene.start('titleScene');
+            });
+        }
+    }
+}
+
 class GameScene extends Phaser.Scene {
     constructor() {
         super('gameScene');
@@ -333,7 +373,7 @@ function Game() {
                     fullscreenTarget: 'main',
                     autoCenter: Phaser.Scale.CENTER_BOTH,
                 },
-                scene: [GameScene],
+                scene: [TitleScene, GameScene],
             });
             setGame(phaserGame);
 
