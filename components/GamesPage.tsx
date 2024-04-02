@@ -20,7 +20,13 @@ const games = [
                 image: "https://assets.wellwich.com/web/watermelon_thumb.jpg",
                 path: "/games/watermelon",
                 description: "スイカゲームのパクリ",
-            }
+            },
+            {
+                name: "ナンバー＆ダイレクション",
+                image: "https://assets.wellwich.com/web/number-and-direction_thumb.webp",
+                path: "/games/number-and-direction",
+                description: "数字と方向をタッチするゲーム",
+            },
         ]
     },
     {

@@ -55,6 +55,14 @@ const info = [
         path: '/games/solo-poker',
         date: '2024/03/17',
     },
+    {
+        id: 8,
+        title: 'ナンバー＆ダイレクションを追加しました',
+        category: 'リリース',
+        color: 'bg-green-400',
+        path: '/games/number-and-direction',
+        date: '2024/04/02',
+    },
 ]
 
 const Info = () => {
