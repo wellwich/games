@@ -45,7 +45,7 @@ class TitleScene extends Phaser.Scene {
         const start = this.add.text(gameConfig.DEFAULT_WIDTH / 2, gameConfig.DEFAULT_HEIGHT / 2 + 100, 'Tap to start', { fontSize: '64px', fontFamily: 'The Strong Gamer' }).setOrigin(0.5, 0.5).setFontSize(32);
         // 画面のどこかをタップしたらゲーム画面へ
         background.on('pointerup', () => {
-            this.scene.start('GameScene');
+            this.scene.start('GameScene', { level: 1, visibleTime: 3000, missCount: 0 });
         });
         if (window.matchMedia && window.matchMedia('(max-device-width: 640px)').matches) {
             const background = this.add.rectangle(0, 0, gameConfig.DEFAULT_WIDTH, gameConfig.DEFAULT_HEIGHT, 0x444444);
@@ -361,7 +361,7 @@ class GameScene extends Phaser.Scene {
         // タイマーを停止
         this.time.removeAllEvents();
         this.input.once('pointerup', () => {
-            this.scene.start("TitleScene", { level: 1, visibleTime: 3000, missCount: 0 });
+            this.scene.start("TitleScene");
         });
     }
 
