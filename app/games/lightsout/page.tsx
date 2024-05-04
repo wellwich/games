@@ -186,12 +186,6 @@ function Game() {
                     autoCenter: Phaser.Scale.CENTER_BOTH,
                 },
                 scene: [TitleScene, GameScene],
-                physics: {
-                    default: 'arcade',
-                    arcade: {
-                        gravity: { y: 0 },
-                    }
-                },
             });
             setGame(phaserGame);
 
