@@ -5,19 +5,19 @@ const games = [
         children: [
             {
                 name: "四川省",
-                image: "https://assets.wellwich.com/web/sichuan_thumb.jpg",
+                image: "https://assets.wellwich.com/web/sichuan_thumb.webp",
                 path: "/games/sichuan",
                 description: "麻雀牌を使った二角取りゲーム",
             },
             {
                 name: "ライツアウト",
-                image: "https://assets.wellwich.com/web/lightsout_thumb.jpg",
+                image: "https://assets.wellwich.com/web/lightsout_thumb.webp",
                 path: "/games/lightsout",
                 description: "シンプルなライツアウト",
             },
             {
                 name: "ヌイカゲーム",
-                image: "https://assets.wellwich.com/web/watermelon_thumb.jpg",
+                image: "https://assets.wellwich.com/web/watermelon_thumb.webp",
                 path: "/games/watermelon",
                 description: "スイカゲームのパクリ",
             },
@@ -27,6 +27,12 @@ const games = [
                 path: "/games/number-and-direction",
                 description: "数字と方向をタッチするゲーム",
             },
+            {
+                name: "8パズル",
+                image: "https://assets.wellwich.com/web/eight-puzzle_thumb.webp",
+                path: "/games/eight-puzzle",
+                description: "数字をスライドさせて並べ替えるゲーム",
+            }
         ]
     },
     {
@@ -35,7 +41,7 @@ const games = [
         children: [
             {
                 name: "ブロック崩し",
-                image: "https://assets.wellwich.com/web/breakout_thumb.jpg",
+                image: "https://assets.wellwich.com/web/breakout_thumb.webp",
                 path: "/games/breakout",
                 description: "シンプルなブロック崩し",
             }

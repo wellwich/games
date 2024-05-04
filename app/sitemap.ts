@@ -23,6 +23,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: "https://games.wellwich.com/games/solo-poker",
         lastModified: new Date()
     },
+    {
+        url: "https://games.wellwich.com/games/number-and-direction",
+        lastModified: new Date()
+    },
+    {
+        url: "https://games.wellwich.com/games/eight-puzzle",
+        lastModified: new Date()
+    },
+    {
+        url: "https://games.wellwich.com/games/breakout",
+        lastModified: new Date()
+    },
     ];
 }
 

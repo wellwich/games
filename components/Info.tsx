@@ -63,6 +63,14 @@ const info = [
         path: '/games/number-and-direction',
         date: '2024/04/02',
     },
+    {
+        id: 9,
+        title: '8パズルを追加しました',
+        category: 'リリース',
+        color: 'bg-green-400',
+        path: '/games/eight-puzzle',
+        date: '2024/05/04',
+    }
 ]
 
 const Info = () => {
